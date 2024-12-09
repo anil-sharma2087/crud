@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>CRUD Operations</title>
+</head>
+<body>
+    
+    <div class="alert">
+        <strong>{{msg}}</strong> 
+      </div>
+      
+    <div id="DivTwo">
+        <form action="/show">
+            <input class="button" type="submit" value="Show Data">
+        </form>
+    </div>
+
+    <div id="DivOne">
+        <form action="/send" method="post">
+            {% csrf_token %}
+            <h1>CRUD Operations<hr><u>Data Entry</u></h1>
+            <h2>Student ID:</br><input type="text" name="id" id="id" required autofocus></h2>
+            <h2>Name: </br><input type="text" name="data1"></h2>
+            <h2>Section: </br><input type="text" name="data2"></h2>
+            <h2><input type="submit" id="btn"></h2>
+        </form>
+    </div>
+</body>
+</html>
